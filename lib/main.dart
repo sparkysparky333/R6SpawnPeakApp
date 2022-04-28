@@ -1,4 +1,8 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/services.dart';
+import 'package:gestures/gestures.dart';
 
 
 void main() {
@@ -29,6 +33,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: const Color(0xFFEFEFEF),
       ),
       home: const MyHomePage(title: 'R6 Spawnpeeks'),
+
     );
   }
 }
@@ -92,13 +97,18 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: const Text('Rainbow Six Siege Spawn Peaks',
+        style: TextStyle(
+          color: Colors.white,
+          ),
+        ),
         centerTitle: true,
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
           child: Column(
+
 
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
@@ -107,26 +117,47 @@ class _MyHomePageState extends State<MyHomePage> {
                   child:Container(
 
                     padding: EdgeInsets.fromLTRB(20, 20, 10, 10),
-                    child: Text((_counter == 0) ? ' Attacker ' : ' Defender',
-                      style: TextStyle(fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold, ),
+                    child: Text((_counter == 0) ? ' Attacker Side ' : ' Defender Side',
+                      style: TextStyle(fontSize: 25, color: Colors.white, fontWeight: FontWeight.bold, ),
 
                   ),
                 )
+
+              ),
+              Center(
+                child: GestureDetector(
+                  onTap: () {
+
+                  }, // Image tapped
+                  child: Image.asset(
+                    'assets/r6logo.jpg',
+                    fit: BoxFit.cover, // Fixes border issues
+                    width: 110.0,
+                    height: 110.0,
+                  ),
+                ),
               ),
             ],
+
 
           ),
 
 
       ),
         bottomNavigationBar: BottomAppBar(
+          color: Colors.transparent,
           shape: const CircularNotchedRectangle(),
           child: Container(height: 50.0,
             child: TextButton(
               onPressed: () {
-
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SecondRoute()),
+                );
               },
-              child: Text('More'),
+              child: Text('More', style: TextStyle(
+                color: Colors.white, fontSize: 22,
+              )),
             ),
           ),
 
@@ -166,4 +197,174 @@ class _MyHomePageState extends State<MyHomePage> {
     ),
     );
   }
+}
+class SecondRoute extends StatelessWidget {
+  const SecondRoute({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      constraints: const BoxConstraints.expand(),
+      decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: NetworkImage("https://images.unsplash.com/photo-1607128849509-bdccb1b58d09?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTh8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80"),
+              fit: BoxFit.cover)),
+      child:Scaffold(
+        backgroundColor: Colors.transparent,
+      appBar: AppBar(
+        title: const Text('More', style: TextStyle(
+              fontSize: 20,
+        ),),
+      ),
+      body: Center(
+        child: Column(
+          children: <Widget> [
+            SizedBox(
+              width: 500.0,
+              height: 150.0,
+              child: Container(
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor:
+                    MaterialStateProperty.all<Color>(Colors.transparent),
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                        EdgeInsets.all(40)),
+                  ),
+                  onPressed: null,
+                  child: new Text("Donate", style: TextStyle(
+                    color: Colors.white, fontSize: 35,
+                  ),),
+                ),
+              ),
+
+            ),
+
+          SizedBox(
+            width: 500.0,
+            height: 150.0,
+              child: Container(
+                child: InkWell(
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.transparent),
+                      padding: MaterialStateProperty.all<EdgeInsets>(
+                          EdgeInsets.all(40)),
+                    ),
+                    onPressed: null,
+                    child: new Text("Join Our Discord", style: TextStyle(
+                      color: Colors.white, fontSize: 35,
+
+                    ),
+                    ),
+
+                  ),
+                    onTap: () => launch('https://discord.gg/wVmtVEY7')
+                ),
+              ),
+
+          ),
+
+            SizedBox(
+              width: 500.0,
+              height: 150.0,
+              child: Container(
+                color: Colors.transparent,
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor:
+                    MaterialStateProperty.all<Color>(Colors.transparent),
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                        EdgeInsets.all(40)),
+                  ),
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) => _buildPopupDialog2(context),
+                    );
+                  },
+                  child: new Text("Shoutout", style: TextStyle(
+                    color: Colors.white, fontSize: 35,
+                  ),),
+                ),
+              ),
+
+            ),
+
+            SizedBox(
+              width: 500.0,
+              height: 150.0,
+              child: Container(
+                color: Colors.transparent,
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor:
+                    MaterialStateProperty.all<Color>(Colors.transparent),
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                        EdgeInsets.all(40)),
+                  ),
+                  onPressed: () {
+                    showDialog(
+                    context: context,
+                    builder: (BuildContext context) => _buildPopupDialog1(context),
+                    );
+                    },
+                  child: new Text("About Us", style: TextStyle(
+                    color: Colors.white, fontSize: 35,
+                  ),),
+                ),
+              ),
+
+            ),
+            //Image.asset('assets/images/r6logo.png'),
+          ],
+        ),
+      ),
+    ),
+    );
+  }
+}
+
+Widget _buildPopupDialog1(BuildContext context) {
+  return AlertDialog(
+    title: const Text('About Us'),
+    content: Column(
+
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: const <Widget>[
+        Text("  My name is Brandon Cho. This was a passion project created by me to not only practice Dart and Flutter but to create a tool to remember spawn peaks in r6. I have always found it quite annoying to die to some random never-before-seen spawn peak, so I created this app to be aware of spawnpeaks and to maybe preform some too.                            Thank you for installing! "),
+      ],
+    ),
+    actions: <Widget>[
+      FlatButton(
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
+        textColor: Theme.of(context).primaryColor,
+        child: const Text('Close'),
+      ),
+    ],
+  );
+}
+Widget _buildPopupDialog2(BuildContext context) {
+  return AlertDialog(
+    title: const Text('Shout Outs'),
+    content: Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: const <Widget>[
+        Text("Kae"),
+      ],
+    ),
+    actions: <Widget>[
+      FlatButton(
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
+        textColor: Theme.of(context).primaryColor,
+        child: const Text('Close'),
+      ),
+    ],
+  );
 }
