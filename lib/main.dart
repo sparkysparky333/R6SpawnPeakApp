@@ -104,45 +104,477 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         centerTitle: true,
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-          child: Column(
+      body: Scrollbar(
+        isAlwaysShown: true,
+        child: SingleChildScrollView(
+                child: Center(
+                  child: Column(
+
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+
+                      Center(
+                          child:Container(
+
+                            padding: const EdgeInsets.fromLTRB(20, 20, 10, 10),
+                            child: Text((_counter == 0) ? ' Attacker Side ' : ' Defender Side',
+                              style: const TextStyle(fontSize: 25, color: Colors.white, fontWeight: FontWeight.bold, ),
+
+                          ),
+                        )
+
+                      ),
+                      Column(children: <Widget>[
+                        //Row 1 names
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Container(
+                              padding: EdgeInsets.fromLTRB(7, 7, 7, 7),
+                              child: const Text("     Bank                         Border  ", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),),
+                              ),
+                            ],
+                        ),
+                        //Row 1 pictures
+                        Row(
+
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+
+                            GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => const Bank()),
+                              );
+                            }, // Image tapped
+                            child: Image.asset(
+                              'assets/r6-maps-bank.jpg',
+                              fit: BoxFit.cover, // Fixes border issues
+                              width: 170.0,
+                              height: 130.0,
+
+                            ),
+
+                          ),
+                            GestureDetector(
+                              onTap: () {
+
+                              }, // Image tapped
+                              child: Image.asset(
+                                'assets/r6-maps-border.jpg',
+                                fit: BoxFit.cover, // Fixes border issues
+                                width: 170.0,
+                                height: 130.0,
+                              ),
+                            ),
+                          ],
+                        ),
+
+                        //Row 2 names
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.fromLTRB(7, 7, 7, 7),
+                              child: const Text("   Chalet                     Clubhouse", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),),
+                            ),
+                          ],
+                        ),
+                        //Row 2 pictures
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            GestureDetector(
+                              onTap: () {
+
+                              }, // Image tapped
+                              child: Image.asset(
+                                'assets/r6-maps-chalet.jpg',
+                                fit: BoxFit.cover, // Fixes border issues
+                                width: 170.0,
+                                height: 130.0,
+
+                              ),
+
+                            ),
+                            GestureDetector(
+                              onTap: () {
+
+                              }, // Image tapped
+                              child: Image.asset(
+                                'assets/r6-maps-clubhouse.jpeg',
+                                fit: BoxFit.cover, // Fixes border issues
+                                width: 170.0,
+                                height: 130.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                        //Row 3 names
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.fromLTRB(7, 7, 7, 7),
+                              child: const Text("   Coastline                 Consulate  ", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),),
+                            ),
+                          ],
+                        ),
+                        //Row 3 pictures
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            GestureDetector(
+                              onTap: () {
+
+                              }, // Image tapped
+                              child: Image.asset(
+                                'assets/r6-maps-coastline.jpeg',
+                                fit: BoxFit.cover, // Fixes border issues
+                                width: 170.0,
+                                height: 130.0,
+
+                              ),
+
+                            ),
+                            GestureDetector(
+                              onTap: () {
+
+                              }, // Image tapped
+                              child: Image.asset(
+                                'assets/r6-maps-consulate.jpeg',
+                                fit: BoxFit.cover, // Fixes border issues
+                                width: 170.0,
+                                height: 130.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                        //Row 4 names
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.fromLTRB(7, 7, 7, 7),
+                              child: const Text("      Favela                      Fortress    ", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),),
+                            ),
+                          ],
+                        ),
+                        //Row 4 pictures
+                        Row(
+
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const Bank()),
+                                );
+                              }, // Image tapped
+                              child: Image.asset(
+                                'assets/r6-maps-favela.jpg',
+                                fit: BoxFit.cover, // Fixes border issues
+                                width: 170.0,
+                                height: 130.0,
+
+                              ),
+
+                            ),
+                            GestureDetector(
+                              onTap: () {
+
+                              }, // Image tapped
+                              child: Image.asset(
+                                'assets/r6-maps-fortress.jpg',
+                                fit: BoxFit.cover, // Fixes border issues
+                                width: 170.0,
+                                height: 130.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                        //Row 5 names
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.fromLTRB(7, 7, 7, 7),
+                              child: const Text("    Hereford                      House      ", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),),
+                            ),
+                          ],
+                        ),
+                        //Row 5 pictures
+                        Row(
+
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const Bank()),
+                                );
+                              }, // Image tapped
+                              child: Image.asset(
+                                'assets/r6-maps-hereford.jpg',
+                                fit: BoxFit.cover, // Fixes border issues
+                                width: 170.0,
+                                height: 130.0,
+
+                              ),
+
+                            ),
+                            GestureDetector(
+                              onTap: () {
+
+                              }, // Image tapped
+                              child: Image.asset(
+                                'assets/r6-maps-house.jpg',
+                                fit: BoxFit.cover, // Fixes border issues
+                                width: 170.0,
+                                height: 130.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                        //Row 6 names
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.fromLTRB(7, 7, 7, 7),
+                              child: const Text("    Kafe                          Kanal  ", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),),
+                            ),
+                          ],
+                        ),
+                        //Row 6 pictures
+                        Row(
+
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const Bank()),
+                                );
+                              }, // Image tapped
+                              child: Image.asset(
+                                'assets/r6-maps-kafe.jpg',
+                                fit: BoxFit.cover, // Fixes border issues
+                                width: 170.0,
+                                height: 130.0,
+
+                              ),
+
+                            ),
+                            GestureDetector(
+                              onTap: () {
+
+                              }, // Image tapped
+                              child: Image.asset(
+                                'assets/r6-maps-kanal.jpg',
+                                fit: BoxFit.cover, // Fixes border issues
+                                width: 170.0,
+                                height: 130.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                        //Row 7 names
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.fromLTRB(7, 7, 7, 7),
+                              child: const Text("       Oregon                    Outback     ", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),),
+                            ),
+                          ],
+                        ),
+                        //Row 7 pictures
+                        Row(
+
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const Bank()),
+                                );
+                              }, // Image tapped
+                              child: Image.asset(
+                                'assets/r6-maps-oregon.jpg',
+                                fit: BoxFit.cover, // Fixes border issues
+                                width: 170.0,
+                                height: 130.0,
+
+                              ),
+
+                            ),
+                            GestureDetector(
+                              onTap: () {
+
+                              }, // Image tapped
+                              child: Image.asset(
+                                'assets/r6-maps-outback.jpg',
+                                fit: BoxFit.cover, // Fixes border issues
+                                width: 170.0,
+                                height: 130.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                        //Row 8 names
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.fromLTRB(7, 7, 7, 7),
+                              child: const Text("         Plane                    Skyscraper   ", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),),
+                            ),
+                          ],
+                        ),
+                        //Row 8 pictures
+                        Row(
+
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const Bank()),
+                                );
+                              }, // Image tapped
+                              child: Image.asset(
+                                'assets/r6-maps-plane.jpg',
+                                fit: BoxFit.cover, // Fixes border issues
+                                width: 170.0,
+                                height: 130.0,
+
+                              ),
+
+                            ),
+                            GestureDetector(
+                              onTap: () {
+
+                              }, // Image tapped
+                              child: Image.asset(
+                                'assets/r6-maps-skyscraper.jpg',
+                                fit: BoxFit.cover, // Fixes border issues
+                                width: 170.0,
+                                height: 130.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                        //Row 9 names
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.fromLTRB(7, 7, 7, 7),
+                              child: const Text("    Theme Park                   Tower         ", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),),
+                            ),
+                          ],
+                        ),
+                        //Row 9 pictures
+                        Row(
+
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const Bank()),
+                                );
+                              }, // Image tapped
+                              child: Image.asset(
+                                'assets/r6-maps-themepark.jpg',
+                                fit: BoxFit.cover, // Fixes border issues
+                                width: 170.0,
+                                height: 130.0,
+
+                              ),
+
+                            ),
+                            GestureDetector(
+                              onTap: () {
+
+                              }, // Image tapped
+                              child: Image.asset(
+                                'assets/r6-maps-tower.jpg',
+                                fit: BoxFit.cover, // Fixes border issues
+                                width: 170.0,
+                                height: 130.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                        //Row 10 names
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.fromLTRB(7, 7, 7, 7),
+                              child: const Text("    Villa                         Yacht   ", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),),
+                            ),
+                          ],
+                        ),
+                        //Row 10 pictures
+                        Row(
+
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const Bank()),
+                                );
+                              }, // Image tapped
+                              child: Image.asset(
+                                'assets/r6-maps-villa.jpg',
+                                fit: BoxFit.cover, // Fixes border issues
+                                width: 170.0,
+                                height: 130.0,
+
+                              ),
+
+                            ),
+                            GestureDetector(
+                              onTap: () {
+
+                              }, // Image tapped
+                              child: Image.asset(
+                                'assets/r6-maps-yacht.jpg',
+                                fit: BoxFit.cover, // Fixes border issues
+                                width: 170.0,
+                                height: 130.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                      ),
+                      ],
 
 
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
 
-              Center(
-                  child:Container(
-
-                    padding: EdgeInsets.fromLTRB(20, 20, 10, 10),
-                    child: Text((_counter == 0) ? ' Attacker Side ' : ' Defender Side',
-                      style: TextStyle(fontSize: 25, color: Colors.white, fontWeight: FontWeight.bold, ),
-
-                  ),
-                )
-
-              ),
-              Center(
-                child: GestureDetector(
-                  onTap: () {
-
-                  }, // Image tapped
-                  child: Image.asset(
-                    'assets/r6logo.jpg',
-                    fit: BoxFit.cover, // Fixes border issues
-                    width: 110.0,
-                    height: 110.0,
                   ),
                 ),
-              ),
-            ],
-
-
-          ),
-
-
+        ),
       ),
         bottomNavigationBar: BottomAppBar(
           color: Colors.transparent,
@@ -152,7 +584,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const SecondRoute()),
+                  MaterialPageRoute(builder: (context) => const More()),
                 );
               },
               child: Text('More', style: TextStyle(
@@ -169,20 +601,20 @@ class _MyHomePageState extends State<MyHomePage> {
             FloatingActionButton(
               backgroundColor: Colors.blue,
               child:
-              Text(
+              const Text(
                   "D",
                   style: TextStyle(fontSize: 25),
               ),
               onPressed: () => _defender(),
               heroTag: null,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             FloatingActionButton(
               backgroundColor: Colors.red,
               child:
-              Text(
+              const Text(
                   "A",
                 style: TextStyle(fontSize: 25),
               ),
@@ -198,8 +630,8 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-class SecondRoute extends StatelessWidget {
-  const SecondRoute({Key? key}) : super(key: key);
+class More extends StatelessWidget {
+  const More({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -212,9 +644,13 @@ class SecondRoute extends StatelessWidget {
       child:Scaffold(
         backgroundColor: Colors.transparent,
       appBar: AppBar(
-        title: const Text('More', style: TextStyle(
-              fontSize: 20,
-        ),),
+        automaticallyImplyLeading: false,
+        title: TextButton(
+          child: const Text('Back', style: TextStyle(
+                fontSize: 20, color: Colors.black,
+          ),),
+          onPressed: () { Navigator.pop(context);},
+        ),
       ),
       body: Center(
         child: Column(
@@ -242,25 +678,23 @@ class SecondRoute extends StatelessWidget {
           SizedBox(
             width: 500.0,
             height: 150.0,
-              child: Container(
-                child: InkWell(
-                  child: ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.transparent),
-                      padding: MaterialStateProperty.all<EdgeInsets>(
-                          EdgeInsets.all(40)),
-                    ),
-                    onPressed: null,
-                    child: new Text("Join Our Discord", style: TextStyle(
-                      color: Colors.white, fontSize: 35,
-
-                    ),
-                    ),
+              child: InkWell(
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor:
+                    MaterialStateProperty.all<Color>(Colors.transparent),
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                        EdgeInsets.all(40)),
+                  ),
+                  onPressed: null,
+                  child: new Text("Join Our Discord", style: TextStyle(
+                    color: Colors.white, fontSize: 35,
 
                   ),
-                    onTap: () => launch('https://discord.gg/wVmtVEY7')
+                  ),
+
                 ),
+                  onTap: () => launch('https://discord.gg/wVmtVEY7')
               ),
 
           ),
@@ -280,7 +714,7 @@ class SecondRoute extends StatelessWidget {
                   onPressed: () {
                     showDialog(
                       context: context,
-                      builder: (BuildContext context) => _buildPopupDialog2(context),
+                      builder: (BuildContext context) => _ShoutOuts(context),
                     );
                   },
                   child: new Text("Shoutout", style: TextStyle(
@@ -306,7 +740,7 @@ class SecondRoute extends StatelessWidget {
                   onPressed: () {
                     showDialog(
                     context: context,
-                    builder: (BuildContext context) => _buildPopupDialog1(context),
+                    builder: (BuildContext context) => _AboutUs(context),
                     );
                     },
                   child: new Text("About Us", style: TextStyle(
@@ -325,7 +759,28 @@ class SecondRoute extends StatelessWidget {
   }
 }
 
-Widget _buildPopupDialog1(BuildContext context) {
+class Bank extends StatelessWidget {
+  const Bank({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Second Route'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            // Navigate back to first route when tapped.
+          },
+          child: const Text('Go back!'),
+        ),
+      ),
+    );
+  }
+}
+
+Widget _AboutUs(BuildContext context) {
   return AlertDialog(
     title: const Text('About Us'),
     content: Column(
@@ -347,7 +802,7 @@ Widget _buildPopupDialog1(BuildContext context) {
     ],
   );
 }
-Widget _buildPopupDialog2(BuildContext context) {
+Widget _ShoutOuts(BuildContext context) {
   return AlertDialog(
     title: const Text('Shout Outs'),
     content: Column(
